@@ -1,0 +1,33 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body{
+background-color: rgb(255, 255, 255);
+}
+
+h1{
+ 
+font-family: 'Montserrat', sans-serif;
+text-transform: uppercase;
+font-size: 2.5rem;
+letter-spacing: 0.2rem;
+text-align: center;  /* Centers the text */
+margin: 60px auto;   /* 60px margin top & bottom, auto left/right centers the block */
+padding: 10px 20px;  /* 10px padding on top & bottom and 20px on left & right */
+/* Make the glow text */
+color: rgb(252, 143, 47); /* Text fill color */
+text-shadow: 0 0 5px #a2ecfd, 0 0 10px #f06d06, 0 0 20px #bafaf4, 0 0 40px #f06d06;
+/* Make animaton zoom */
+animation: zoomInOut 3s ease-in-out infinite;
+}
+@keyframes zoomInOut {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
