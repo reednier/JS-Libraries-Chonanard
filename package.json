@@ -1,0 +1,21 @@
+{
+  "name": "javascript-libraries",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:public/assets/css",
+    "serve": "lite-server --baseDir=\"public\"",
+    "start": "concurrently \"npm run sass\" \"npm run serve\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "lite-server": "^2.6.1",
+    "sass": "^1.85.1"
+  },
+  "dependencies": {
+    "a-js-footer": "^0.1.0"
+  }
+}
