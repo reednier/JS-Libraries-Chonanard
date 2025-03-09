@@ -1,0 +1,246 @@
+
+
+ <!-- JS LIBRALIES 
+
+1.Nav indicator https://jvcodes.com/navigation-bar-with-indicator/
+2.Glide (https://glidejs.com/) - Slider and carousel
+3.Lightbox (https://lokeshdhakar.com/projects/lightbox2/) 
+4.Chatbot https://dev.to/sylviapap/make-a-simple-chatbot-with-javascript-1gc
+5.Calendar https://www.geeksforgeeks.org/how-to-design-a-simple-calendar-using-javascript/
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination</title>
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- External Styles Glide-->
+    <link rel="stylesheet" href="assets/glide/cssGlide/glide.core.css">
+    <link rel="stylesheet" href="assets/glide/cssGlide/glide.theme.css">
+    <!-- External Styles Lightbox -->
+    <link rel="stylesheet" href="assets/lightbox/dist/css/lightbox.css">
+    <link rel="stylesheet" href="assets/lightbox/dist/css/lightbox.min.css">
+    <!-- External CSS for Nav Styling -->
+    <link rel="stylesheet" href="assets/css/navStyles.css">
+    <!-- Boxicons Icon Library (for icons used in the navigation) -->
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- External CSS for Calendar -->
+    <link rel="stylesheet" href="assets/css/calendar.css"/>
+     
+</head>
+<body>
+<!-- Navigation Bar with Indicator Coding By JV Codes | www.jvcodes.com -->
+    <!-- Main Navigation Bar -->
+    <nav class="nav">
+        <!-- Navigation List -->
+        <ul class="nav-content">
+            <!-- Logo on the left -->
+            <div class="logo">
+                <a href="#">
+                    <img src="assets/images/Logo%20Destination.png" alt="Airplane Logo orange color">
+                </a>
+            </div>
+            <!-- Home Navigation Item -->
+            <li class="nav-list">
+                <a href="#" class="link-item active">
+                    <i class='bx bxs-home link-icon'></i> <!-- Icon -->
+                    <span class="link-text">Home</span> <!-- Text for Home -->
+                </a>
+            </li>
+
+            <!-- Content Navigation Item -->
+            <li class="nav-list">
+                <a href="#" class="link-item">
+                    <i class='bx bxs-caret-right-square link-icon'></i> <!-- Icon -->
+                    <span class="link-text">Destinations</span> <!-- Text for Content -->
+                </a>
+            </li>
+
+            <!-- Analytics Navigation Item -->
+            <li class="nav-list">
+                <a href="#" class="link-item">
+                    <i class='bx bxs-bar-chart-square link-icon'></i> <!-- Icon -->
+                    <span class="link-text">Booking</span> <!-- Text for Analytics -->
+                </a>
+            </li>
+
+            <!-- Comments Navigation Item -->
+            <li class="nav-list">
+                <a href="#" class="link-item">
+                    <i class='bx bxs-message-rounded link-icon'></i> <!-- Icon -->
+                    <span class="link-text">Help&Support</span> <!-- Text for Comments -->
+                </a>
+            </li>
+
+            <!-- Profile Navigation Item -->
+            <li class="nav-list">
+                <a href="#" class="link-item">
+                    <i class='bx bxs-user link-icon'></i> <!-- Icon -->
+                    <span class="link-text">Profile</span> <!-- Text for Profile -->
+                </a>
+            </li>
+
+    <!-- Indicator (optional) -->
+    <span class="indicator"></span>
+  </nav>
+    <div class="glide">
+        <!-- Glide Track: contains slides -->
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+            <img src="assets/images/Banff Canada.jpeg" alt="One Lady Kayaking in the lake">
+            </li>
+            <li class="glide__slide">
+                <img src="assets/images/Airplane Window.jpg" alt="Airplane Window seat with clouds view ">
+                </li>
+         </ul>
+    </div>
+    <!-- Arrow controls -->
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">Prev</button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">Next</button>
+    </div>
+  
+    <!-- Bullet navigation -->
+    <div class="glide__bullets" data-glide-el="controls[nav]">
+      <button class="glide__bullet" data-glide-dir="=0"></button>
+      <button class="glide__bullet" data-glide-dir="=1"></button>
+    </div>
+  </div>
+  <h1>Explore Your Next Destinations</h1>
+
+  <!-- Calendar-->
+  <div class="calendar-wrapper">
+   <!-- Left Side: YouTube Video -->
+<div class="calendar-video">
+    <iframe src="https://www.youtube.com/embed/QWrpx-lb1zw?autoplay=1&mute=1&si=6aa1ZTvZ0a-masD1" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+    </iframe>
+  </div>
+  
+    <!-- Right side: Calendar -->
+    <div class="calendar-container">
+      <header class="calendar-header">
+        <div class="header-left">
+          <p class="calendar-current-date"></p>
+        </div>
+        <div class="header-right">
+          <div class="calendar-navigation">
+            <span id="calendar-prev" class="material-symbols-rounded">&#x276E;</span>
+            <span id="calendar-next" class="material-symbols-rounded">&#x276F;</span>
+          </div>
+          <div class="calendar-search">
+            <input type="text" id="calendar-search-input" placeholder="Search..." autocomplete="off">
+          </div>
+        </div>
+      </header>
+  
+      <div class="calendar-body">
+        <ul class="calendar-weekdays">
+          <li>Sun</li>
+          <li>Mon</li>
+          <li>Tue</li>
+          <li>Wed</li>
+          <li>Thu</li>
+          <li>Fri</li>
+          <li>Sat</li>
+        </ul>
+        <ul class="calendar-dates"></ul>
+      </div>
+    </div>
+  </div>  
+  <hr />
+<!-- Lightbox Section-->
+<section>
+    <h3>SEIZE THE SUN</h3>
+    <p>Discover our 50+ sunny destinations. Find your calm in the Cayman Islands
+        Escape to a serene paradise where tranquility is all around </p>
+    <div class="lightbox-gallery">
+      <a class="travelPhoto" href="https://cdn.britannica.com/54/93954-050-AF18826E/Snorkeling-tourists-stingrays-Grand-Cayman-Islands.jpg" data-lightbox="example-1"data-title="Cancún"><img class="island-image" src="https://cdn.britannica.com/54/93954-050-AF18826E/Snorkeling-tourists-stingrays-Grand-Cayman-Islands.jpg" alt="image-1" /></a>
+      <a class="travelPhoto" href="https://cdn.visitcaymanislands.com/media/photo-galleries/beaches%202024/starfish-point.jpg" data-lightbox="example-2"data-title="Bali"><img class="island-image" src="https://cdn.visitcaymanislands.com/media/photo-galleries/beaches%202024/starfish-point.jpg" alt="image-2" /></a>
+      <a class="travelPhoto" href="https://explore-cayman.imgix.net/images/kids-diving-3.jpg?auto=format&crop=focalpoint&domain=explore-cayman.imgix.net&fit=crop&fp-x=0.5777&fp-y=0.1593&h=600&ixlib=php-3.3.1&q=82&usm=20&w=992" data-lightbox="example-3"data-title="Cuba"><img class="island-image" src="https://explore-cayman.imgix.net/images/kids-diving-3.jpg?auto=format&crop=focalpoint&domain=explore-cayman.imgix.net&fit=crop&fp-x=0.5777&fp-y=0.1593&h=600&ixlib=php-3.3.1&q=82&usm=20&w=992" alt="image-3"/></a>
+    </div>
+
+    <hr />
+
+    <h3>YOUR PASSPORT TO ASIA</h3>
+    <p>Across one vast landmass you will find almost everything. Welcome to Asia, the most populous, energetic and contradictory continent on earth</p>
+    <div class="lightbox-gallery">
+      <a class="travelPhoto" href="https://imageio.forbes.com/specials-images/imageserve/968162396/Japan-reopen-tourism-Covid/0x0.jpg?format=jpg&crop=5854,3678,x0,y229,safe&width=960" data-lightbox="asia-set" data-title="Fuji Japan"><img class="asia-image" src="https://imageio.forbes.com/specials-images/imageserve/968162396/Japan-reopen-tourism-Covid/0x0.jpg?format=jpg&crop=5854,3678,x0,y229,safe&width=960" alt=""/></a>
+      <a class="travelPhoto" href="https://i.natgeofe.com/n/eb9f0faa-75bc-47e2-8b14-253031b74125/bigtripjapantokyocrossing.jpg" data-lightbox="asia-set" data-title="Travel in Japan can be complicated, but careful trip planning reaps huge rewards"><img class="asia-image" src="https://i.natgeofe.com/n/eb9f0faa-75bc-47e2-8b14-253031b74125/bigtripjapantokyocrossing.jpg" alt="" /></a>
+      <a class="travelPhoto" href="https://www.turquoiseholidays.co.uk/blog/wp-content/uploads//2017/01/phuket.jpg" data-lightbox="asia-set" data-title="Thailand"><img class="asia-image" src="https://www.turquoiseholidays.co.uk/blog/wp-content/uploads//2017/01/phuket.jpg" alt="" /></a>
+      <a class="travelPhoto" href="https://cdn.tourradar.com/s3/serp/1500x800/4600_t8afNwa2.jpg" data-lightbox="asia-set" data-title="Thailand unfolds from Wat Arun temple"><img class="asia-image" src="https://cdn.tourradar.com/s3/serp/1500x800/4600_t8afNwa2.jpg" alt="" /></a>
+      <a class="travelPhoto" href="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2024/03/09/2e0c9793-9c10-494d-861d-e8ca9b89d22e_b1de99a1.jpg" data-lightbox="asia-set" data-title="Hong Kong"><img class="asia-image" src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2024/03/09/2e0c9793-9c10-494d-861d-e8ca9b89d22e_b1de99a1.jpg" alt="" /></a>
+      <a class="travelPhoto" href="https://www.atlys.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2FW3Iz4WACAy2J0qT0cCT3xA%2Fdidi%2Farticles%2Fxjbrvo0ibdq2qa3btcasy84j%2Fpublic&w=1920&q=75" data-lightbox="asia-set" data-title="Vietnam"><img class="asia-image" src="https://www.atlys.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2FW3Iz4WACAy2J0qT0cCT3xA%2Fdidi%2Farticles%2Fxjbrvo0ibdq2qa3btcasy84j%2Fpublic&w=1920&q=75" alt="" /></a>
+      <a class="travelPhoto" href="https://image.cnbcfm.com/api/v1/image/106246652-1573788271264gettyimages-1051651510.jpeg?v=1573788570&w=1600&h=900" data-lightbox="asia-set" data-title="The Great Wall China"><img class="asia-image" src="https://image.cnbcfm.com/api/v1/image/106246652-1573788271264gettyimages-1051651510.jpeg?v=1573788570&w=1600&h=900" alt="" /></a>
+      <a class="travelPhoto" href="https://etimg.etb2bimg.com/photo/97052424.cms" data-lightbox="asia-set" data-title="Singapore"><img class="asia-image" src="https://etimg.etb2bimg.com/photo/97052424.cms" alt="" /></a>
+      <a class="travelPhoto" href="https://www.eyeonasia.gov.sg/images/asean-countries/Malaysia%20snapshot%20cover%20iso.jpg" data-lightbox="asia-set" data-title="Malaysia"><img class="asia-image" src="https://www.eyeonasia.gov.sg/images/asean-countries/Malaysia%20snapshot%20cover%20iso.jpg" alt="" /></a>
+    </div>
+  </section>
+
+<!-- Chatbot-->
+<div id="chatBot">
+    <div><input id="input" type="text" placeholder="Type a message..." autocomplete="off"/></div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+      <!-- Optional Logo -->
+      <div class="footer-logo">
+        <a href="#">
+          <img src="assets/images/Logo White Text Destination.png" alt="Text Destination Logo">
+        </a>
+      </div>
+      <!-- Navigation Links -->
+      <div class="footer-links">
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <!-- Social Media Icons -->
+      <div class="footer-social">
+        <a href="#" title="Facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" title="Twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" title="Instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 Destination. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  
+
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
+<!-- External JS Glide -->
+<script src="assets/glide/jsGlide/glide.js"></script>
+<script src="assets/glide/jsGlide/glide.min.js"></script>
+
+<!-- External JS Lightbox-->
+<script src="assets/lightbox/dist/js/lightbox-plus-jquery.js"></script>
+<script src="assets/lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
+<script src="assets/lightbox/dist/js/lightbox.js"></script>
+<script src="assets/lightbox/dist/js/lightbox.min.js"></script>
+
+<!-- External JS Nav-->
+<script src="assets/js/nav.js"></script>
+
+<!-- External JS Calendar -->
+<script src="assets/js/calendar.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* Importing Google Font 'Poppins' */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* General Reset and Font Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo img {
+    max-width: 60px;  /* Adjust to your desired width */
+    height: auto;      /* Maintain the image aspect ratio */
+    display: block;    /* Remove extra inline spacing if needed */
+  }
+  
+/* Navigation Styling */
+nav {
+    position: sticky;      /* Make nav sticky */
+    top: 0;                /* Stick to the top */
+    z-index: 1000; /* Ensure it appears above other content */
+    background: #FFF;      /* White background */
+    padding: 0 15px;       /* Reduced horizontal padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    /* Removed border-radius for a square look */
+}
+
+/* Navigation Content: Flexbox layout for the list items */
+.nav-content {
+    display: flex;
+    height: 80px;          /* Reduced height for nav bar */
+    align-items: center;
+    list-style: none;
+    position: relative;
+    justify-content: space-evenly; /* Evenly distributes items */
+}
+
+/* Link Item Styling: Flex layout for icons and text */
+.link-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80px;          /* Match nav height */
+    width: 70px;           /* Reduced width */
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Active Link Item: Slight upward shift on active item */
+.link-item.active {
+    transform: translateY(-5px); /* Smaller upward movement */
+}
+
+/* Icon Styling for the Navigation Links */
+.link-icon {
+    font-size: 28px;       /* Reduced icon size */
+    color: #999;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Active Icon Color */
+.link-item.active .link-icon {
+    color: #FF7043;
+}
+
+/* Text Styling: Positioned under the icon */
+.link-text {
+    position: absolute;
+    font-size: 10px;       /* Smaller text size */
+    font-weight: 500;
+    color: #FF7043;
+    opacity: 0;            /* Hidden by default */
+    transform: translateY(24px); /* Adjusted position */
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Active Text Visibility */
+.link-item.active .link-text {
+    opacity: 1;
+}
+
+/* Remove the Indicator if you don't want the round box */
+.indicator {
+    display: none;
+}
+
+/* ---------------------------------------------
+   Responsive Adjustments (Mobile) at the bottom
+   --------------------------------------------- */
+   @media (max-width: 768px) {
+/* Hide the original nav content */
+.nav-content {
+    display: none;
+}
+   }
+    

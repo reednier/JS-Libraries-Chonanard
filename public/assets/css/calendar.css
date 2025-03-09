@@ -1,0 +1,201 @@
+/* Global Reset and Font */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f8f8;
+}
+
+/* Wrapper for Calendar and Photo */
+.calendar-wrapper {
+  display: flex;
+  align-items: flex-start;  /* Align at top */
+  gap: 20px;                /* Space between photo and calendar */
+  margin: 20px auto;
+  max-width: 1000px;        /* Adjust as needed */
+  padding: 0 20px;
+}
+
+/* Calendar Video Container (Left Side) */
+.calendar-video {
+  flex: 0 0 600px;        /* Fixed width: 600px */
+  height: 420px;          
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 140, 0); 
+  border: 2px solid rgb(255, 140, 0); 
+  border-radius: 10px;    /* Rounded corners */
+  overflow: hidden;       /* Ensure the iframe stays within the container */
+}
+
+/* Iframe styling */
+.calendar-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Calendar Container (Right Side) */
+.calendar-container {
+  flex: 1;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Calendar Header */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 140, 0);  /* Accent orange */
+  color: #fff;
+  padding: 10px 20px;
+  animation: slideInLeft 0.6s ease-out;
+}
+.header-left {
+  flex: 1;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.calendar-current-date {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Calendar Navigation */
+.calendar-navigation {
+  display: flex;
+  gap: 10px;
+}
+.calendar-navigation span {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.calendar-navigation span:hover {
+  color: #FFDAB9;
+  transform: scale(1.1);
+}
+
+/* Calendar Search Input */
+.calendar-search input {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+.calendar-search input:focus {
+  box-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+}
+
+/* Calendar Body */
+.calendar-body {
+  padding: 15px;
+  background-color: rgb(238, 251, 255);
+}
+
+/* Weekdays Header */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  list-style: none;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+.calendar-weekdays li {
+  padding: 5px 0;
+}
+
+/* Date Grid */
+.calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  list-style: none;
+  text-align: center;
+}
+.calendar-dates li {
+  padding: 8px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  color: #333;
+}
+.calendar-dates li:hover {
+  background-color: rgba(255, 140, 0, 0.2);
+  transform: scale(1.05);
+}
+.calendar-dates li.active {
+  background-color: rgb(255, 140, 0);
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* ---------------------------------------------
+   Responsive Adjustments (Mobile) at the bottom
+   --------------------------------------------- */
+   @media (max-width: 768px) {
+    /* Stack the video and the calendar vertically */
+    .calendar-wrapper {
+      flex-direction: column;
+      align-items: center;  /* Center them in a column */
+      max-width: 600px;     /* Optional narrower wrapper on mobile */
+    }
+    
+    /* Let the video container fill the width */
+    .calendar-video {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 600px;     /* Keep a max-width if desired */
+      height: auto;         /* Let height adjust dynamically */
+    }
+    
+    /* For the iframe, set a fixed height if you prefer */
+    .calendar-video iframe {
+      height: 300px;        /* Adjust as needed */
+    }
+    
+    /* Calendar container also full width */
+    .calendar-container {
+      width: 100%;
+      max-width: 600px;     /* Adjust as needed */
+      margin-top: 20px;     /* Space between video and calendar */
+    }
+  }
